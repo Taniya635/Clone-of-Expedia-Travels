@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container{
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            gap: 1rem;
+            padding-left: 30px;
+            padding-right: 30px;
+            margin-top: 7rem;
+        }
+        #container div{
+            /* margin-top: 7rem; */
+            width:100%;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+            border-radius: 0.5rem;
+            padding-bottom: 10px;
+        }
+        #container img{
+            width:100%;
+            border-radius: 0.5rem;
+        }
+        .get{
+            margin-top: 3rem;
+            text-align: center;
+            font-size: 50px;
+        }
+        .para{
+            text-align: center;
+            margin-top: 3rem;
+            width:600px;
+            margin: auto;
+            font-size: 20px
+
+        }
+        .member{
+            margin: auto;
+            text-align: center;
+            margin-top: 1.5rem;
+        }
+        .member a{
+            text-decoration: none;
+            color: blue;
+        }
+        .btn{
+            background-color: transparent;
+            border: 2px solid rgb(195, 198, 202);
+            border-radius: 0.2rem;
+            color: blue;
+        }
+        .join{
+            /* width:200px; */
+            margin: auto;
+            margin-top: 4.5rem;
+            margin-left: 620px;
+
+            padding: 15px ;
+            border-radius: 0.5rem;
+            border: none;
+            font-size: 1rem;
+            background-color: rgb(42, 100, 227);
+            color: white;
+            cursor: pointer;
+            /* margin: auto; */
+        }
+        .join a{
+            text-decoration: none;
+            color: white;
+        }
+        .foot{
+            width:85%;
+            margin: auto;
+            margin-top: 2rem;
+        }
+        .footer{
+            width:85%;
+            margin: auto;
+            margin-top: 0.5rem;
+            display: flex;
+            gap: 9rem;
+            border-bottom: grey;
+        }
+        .one{
+            margin-top : 1rem;
+        }
+        .one a{
+            color: blue;
+            font-size: 15px;
+        }
+        .one a:link{
+            text-decoration: none;
+        }
+        .one a:hover{
+            text-decoration: underline;
+        }
+        .two{
+            margin-top: 1rem;
+        }
+        .two a{
+            color: blue;
+            font-size: 15px;
+        }
+        .two a:link{
+            text-decoration: none;
+        }
+        .two a:hover{
+            text-decoration: underline;
+        }
+        .three{
+            margin-top: 1rem;
+        }
+        .three a{
+            color: blue;
+            font-size: 15px;
+        }
+        .three a:link{
+            text-decoration: none;
+        }
+        .three a:hover{
+            text-decoration: underline;
+        }
+        .four{
+            margin-top: 1rem;
+        }
+        .four a{
+            color: blue;
+            font-size: 15px;
+        }
+        .four a:link{
+            text-decoration: none;
+        }
+        .four a:hover{
+            text-decoration: underline;
+        }
+        .img-2{
+            width:85%;
+            /* border: 1px solid red; */
+            margin: auto;
+            margin-top: 3rem;
+        }
+        @media screen and (min-width:500px) and (max-width:800px){
+            #container{
+                display: grid;
+                grid-template-columns: repeat(2,1fr);
+            }
+            .join{
+                margin-left: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1 class="get">Get member prices</h1>
+    <p class="para">When you sign up or log in to your Expedia Rewards account, you can instantly save 10% or more on select hotels with the Member Rate sticker, plus you'll earn points on eligible bookings. Terms and conditions may apply.
+
+    </p>
+    <button class="join" onclick="join()"><a href="#">Join Expedia rewards</a> </button>
+    <p class="member">Are you already a member? <a href="./signup.html">Sign in</a></p>
+    <div id="container">
+        
+    </div>
+    <div class="foot">
+        <img class="img1" src="https://a.travel-assets.com/globalcontrols-service/content/f285fb631b0a976202ef57611c7050e9ef5ca51a/images/EG_Wordmark_blue_RGB.svg" alt="">
+    </div>
+    <footer class="footer">
+        <div >
+            <div class="one">Company</div>
+           <div class="one"><a href="#">About us</a></div>
+            <div class="one"><a href="#">Jobs</a></div>
+            <div class="one"><a href="#">List your property</a></div>
+            <div class="one"><a href="#">Partnerships</a></div>
+        </div>
+        <div>
+            <div class="two">Explore</div>
+            <div class="two"><a href="#">India travel guide</a></div>
+            <div class="two"><a href="#">Hotels in India</a></div>
+            <div class="two"><a href="#">Holiday rentals in India</a></div>
+            <div class="two"><a href="#">Holiday packages in India</a></div>
+            <div class="two"><a href="#">Domestic flights</a></div>
+            <div class="two"><a href="#">Car hire in India</a></div>
+            <div class="two"><a href="#">All acomodation types</a></div>
+            <div class="two"><a href="#">Travel blog</a></div>
+        </div>
+            <div>
+                <div class="three">Policies</div>
+                <div class="three"><a href="#">Privacy Statement</a></div>
+                <div class="three"><a href="#">Terms of use</a></div>
+                <div class="three"><a href="#">Vrbo terms and conditions</a></div>
+            </div>
+            <div>
+                <div class="four">Help</div>
+                <div class="four"><a href="#">Support</a></div>
+                <div class="four"><a href="#">Change or cancel your booking</a></div>
+                <div class="four"><a href="#">Refund process and timelines</a><div>
+                <div class="four"><a href="#">Book a flight using an airline credit</a></div>
+                <div class="four"><a href="#">International travel documents</a></div>
+            </div>
+    </footer>
+    <div class="img-2">
+        <img src="https://images.trvl-media.com/media/content/expind/images/sg/secure.png" alt="">
+    </div>
+    </div>
+</body>
+</html>
+<script>
+    let container=document.getElementById("container");
+    // let info=document.getElementsByClassName("card")
+
+    let val=fetch('https://639b8109d51415019756d8f7.mockapi.io/Places')
+    val.then((res)=>{
+       let dat= res.json();
+       console.log(res);
+       return dat;
+    })
+    .then((actualData)=>{
+
+        displayPlaces(actualData)
+        console.log(actualData);
+    })
+    .catch((err)=>{
+        console.log(err);
+    })
+
+    function displayPlaces(data){
+        data.forEach((element,index) => {
+            // console.log(data)
+            let card=document.createElement("div")
+            card.setAttribute("class","card");
+            // let info=document.createElement("div");
+
+            let avatar=document.createElement("img")
+            avatar.setAttribute("src",element.avatar);
+            // avatar.setAttribute("href",element.avatar)
+            let title=document.createElement("h3")
+            title.innerText=element.title;
+            title.setAttribute("class","title")
+            let Description=document.createElement("p");
+            Description.innerText=element.Description;
+            // Description.setAttribute("class","Description")
+            let price=document.createElement("h4");
+            price.innerText=element.price
+            let button=document.createElement("button");
+            button.innerText="Login for member prices";
+            button.setAttribute("class","btn")
+            button.addEventListener("click",()=>{
+                
+                console.log(element)
+            })
+            // button.setAttribute("href=#",element.button)
+            card.append(avatar,title,Description,price,button);
+            container.append(card);
+        });
+        
+    }
+    function join(){
+            console.log("ok")
+        }
+</script>

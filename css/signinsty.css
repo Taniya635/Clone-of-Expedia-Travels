@@ -1,0 +1,54 @@
+.container{
+    margin: auto;
+    align-items: center;
+    /* justify-content: center; */
+    grid-template-columns: repeat(1,1fr);
+    width:400px;
+    margin-top: 3rem;
+}
+.save{
+    color: rgb(140, 136, 136);
+}
+.email{
+    width:90%;
+    padding: 15px;
+    border-radius: 0.5rem;
+    margin-top: 1rem;
+    border:1px solid grey;
+}
+.btn{
+    width:97%;
+    padding: 15px;
+    border-radius: 0.5rem;
+    border:1px solid grey;
+    font-size: 15px;
+    background-color: blue;
+    color: white;
+}
+.or{
+    text-align: center;
+}
+.continue{
+    width:97%;
+    padding: 15px;
+    border-radius: 0.5rem;
+    margin-top: 1rem;
+    border:1px solid grey;
+    font-size: 15px;
+    background-color: blue;
+    color: white;
+}
+.sign{
+    text-align: center;
+}
+.other{
+    text-align: center;
+}
+.cont{
+    margin: auto;
+    width:10%;
+}
+.facebook{
+    color: blue;
+
+}

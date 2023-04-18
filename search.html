@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container{
+            display: grid;
+            /* flex-direction: column; */
+            grid-template-columns: repeat(1,1fr);
+            gap: 1rem;
+        }
+        #container div{
+            width:100%;
+            margin: auto;
+            border-radius: 0.5rem;
+        }
+        #container>div>img{
+            width:40%;
+            border-top-left-radius:0.5rem ;
+            border-bottom-left-radius: 0.5rem;
+        }
+        /* .inside div{
+            display: flex;
+        } */
+        .card{
+            display: flex;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            /* width:30rem; */
+        }
+        
+        .Description{
+            margin: auto;
+        }
+        .price{
+            /* margin: auto; */
+            margin-left: 10px;
+            margin-top: 180px;
+            font-size: 30px;
+        }
+        .subdiv{
+            width: 80vw;
+            height: 10vh;
+            /* border: 2px solid black; */
+            margin: 10px 30px;
+            display: flex;
+        }    
+        .stays{
+            width:150px;
+            margin: 5px 20px;
+            height: 50px;
+            border: 1px solid black;
+            border-radius: 10px;
+        }
+        .srh{
+            width:100px;
+            height:60px;
+            color: blue;
+        }
+        div #select{
+            width:150px;
+            background-color: rgb(176, 175, 175);
+        }
+        /* .nav{
+           width:80px 
+        } */
+        
+        
+    </style>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</head>
+<body>
+    <div class="nav">
+    <div class="subdiv">
+        <input type="text" class="stays location" placeholder="Going to">
+        <input type="date" class="stays" placeholder="Check in">
+        <input type="date" class="stays" placeholder="Check out">
+        <input type="text" class="stays location-d" placeholder="Travellers">
+        <a href="./memberprices.html"><ion-icon name="search-circle" class="srh"></ion-icon></a> 
+    </div>
+    <!-- <div > -->
+    
+</div>
+<select id="filter">
+    <option value="">Select</option>
+<option value="algeria">Algeria</option>
+<option value="nauru">Nauru</option>
+<option value="bolivia">Bolivia</option>
+</select>
+<!-- </div> -->
+    <div id="container">
+        <!-- <div class="card"></div> -->
+    </div>
+        
+    
+    
+</body>
+</html>
+<script>
+    let container=document.getElementById("container");
+    let select=document.getElementById("filter")
+    let info=document.getElementsByClassName("card")
+    let fetchdata=[];
+    select.addEventListener("change",()=>{
+        console.log(select.value);
+        let filtered=fetchdata.filter((element)=>{
+            console.log(element);
+            if(element.title===select.value){
+                return true;
+            }else {
+                return false;
+            }
+
+        });
+        displayPlaces(filtered);
+        console.log(filtered)
+    });
+
+    let val=fetch('https://639b8109d51415019756d8f7.mockapi.io/Places')
+    val.then((res)=>{
+       let dat= res.json();
+       console.log(res);
+       return dat;
+    })
+    .then((actualData)=>{
+        fetchdata=actualData.data;
+        displayPlaces(actualData)
+        console.log(actualData);
+    })
+    .catch((err)=>{
+        console.log(err);
+    })
+
+    function displayPlaces(data){
+        // container.innerHTML=null;
+        data.forEach((element,index) => {
+            // console.log(data)
+            let card=document.createElement("div")
+            card.setAttribute("class","card");
+            // let info=document.createElement("div");
+
+            let avatar=document.createElement("img")
+            avatar.setAttribute("src",element.avatar);
+            avatar.setAttribute("href",element.avatar)
+            let title=document.createElement("h3")
+            title.innerText=element.title;
+            // title.setAttribute("class","title")
+            let Description=document.createElement("p");
+            Description.innerText=element.Description;
+            Description.setAttribute("class","Description")
+            let price=document.createElement("h4");
+            price.innerText=element.price
+            price.setAttribute("class","price")
+            // info.append(inside);
+            
+            card.append(avatar,title,Description,price);
+            container.append(card);
+        });
+    }
+</script>

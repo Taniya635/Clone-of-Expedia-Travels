@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create an account</title>
+    <link rel="stylesheet" href="css/signinsty.css">
+    <script src="./Scripts/signin.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</head>
+<body>
+    <form action="">
+        <div class="container">
+            <h1>Create an account</h1>
+            <p class="save">Save an average of 15% on thousands of hotels as a member—it’s always free.</p>
+        <button class="btn">Sign up with google</button>
+        <p class="or">or</p>
+        <input type="email" placeholder="Email address" class="email" id="email">
+        <input type="text" placeholder="Firstname" class="email" id="first" >
+        <input type="text" placeholder="Surname" class="email" id="sur">
+        <input type="password" placeholder="Password" class="email" id="pwd" >
+
+        <p><input type="checkbox" class="check">Keep me signed in</p>
+        <p>Selecting this checkbox will keep you signed into your account on this device until you sign out. Do not select this on shared devices.</p>
+        <p><input type="checkbox" class="box">I'd like to receive travel deals, special offers and other information from Expedia via email.</p>
+        <input type="submit" class="continue" onclick="sub()"></input>
+        <p class="sign">Already have an account? <a href="./signup.html">Sign in</a> </p>
+        <p class="other">Other ways to sign up</p>
+        <div class="cont">
+            <ion-icon name="logo-apple"></ion-icon>
+            <ion-icon class="facebook" name="logo-facebook"></ion-icon>
+        </div>
+    </div>
+    </form>
+</body>
+</html>
+<script>
+
+    let form=document.querySelector("form");
+    let pwd=document.getElementById("pwd").maxLength="8"
+    let data=JSON.parse(localStorage.getItem("info"));
+    if(data==null){
+        data=[];
+    }
+    form.addEventListener("submit",(e)=>{
+        e.preventDefault();
+        alert("Account created successfully");
+        let obj={
+            mail:form.email.value,
+            first:form.first.value,
+            sur:form.sur.value,
+            pwd:form.pwd.value,
+        }
+        data.push(obj);
+        console.log(obj)
+        localStorage.setItem("info",JSON.stringify(data));
+    })
+    function sub(){
+        location.replace("http://127.0.0.1:5500/14:12/signup.html")
+    }
+</script>
+

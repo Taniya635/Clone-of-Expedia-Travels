@@ -1,0 +1,38 @@
+.container{
+    margin: auto;
+    align-items: center;
+    width:400px;
+    margin-top: 4rem;
+}
+.image{
+    margin-top: 4rem;
+    margin: auto;
+    width:100px;
+    margin-left: 120px;
+    align-items: center;
+}
+.btn{
+    margin-top: 3rem;
+    width:95%;
+    padding: 10px;
+    background-color: rgb(21, 115, 229);
+    border: none;
+    border-radius: 0.5rem;
+    
+
+}
+.btn a{
+    text-decoration: none;
+    color: white;
+    font-size: 15px;
+}
+
+.below{
+    width:95%;
+    height:80px;
+    border: 1px solid gray;
+    margin-top: 2rem;
+    border-radius: 0.5rem;
+    padding: 5px;
+    /* text-align: center; */
+}

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sign up</title>
+    <link rel="stylesheet" href="css/signup.css">
+    <script src="./Scripts/signup.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</head>
+<body>
+    <form action="">
+        <div class="container">
+            <h1>Sign in</h1>
+            <p>Save an average of 15% on thousands of hotels as a member—it’s always free.</p>
+        <button class="btn">Sign up with google</button>
+        <p class="or">or</p>
+        <input type="email" placeholder="Email address" class="email" id="email">
+        
+        <input type="password" placeholder="Password" class="email" id="pwd" >
+            
+        <p><input type="checkbox" class="check">Keep me signed in</p>
+        <p>Selecting this checkbox will keep you signed into your account on this device until you sign out. Do not select this on shared devices.</p>
+        
+        <input type="submit" class="signin" onclick="sub()"></input>
+        <!-- <p class="sign">Already have an account? <a href="./signup.html">Sign in</a> </p> -->
+        <p class="forgot"><a  href="#" >Forgot password?</a></p>
+        <p class="dont">Dont't have an account ?<a href="./signin.html">Create one</a></p>
+        <p class="other">Other ways to sign up</p>
+        <div class="cont">
+            <ion-icon name="logo-apple"></ion-icon>
+            <ion-icon class="facebook" name="logo-facebook"></ion-icon>
+        </div>
+    </div>
+    </form>
+</body>
+</html>
+<script>
+    let form=document.querySelector("form");
+    let pwd=document.getElementById("pwd").maxLength="8"
+    let x=document.getElementById("email");
+    let y=document.getElementById("pwd");
+    let data=JSON.parse(localStorage.getItem("info"));
+    if(data==null){
+        data=[];
+    }
+    form.addEventListener("submit",(e)=>{
+        e.preventDefault();
+        alert("Signin Successful");
+
+        let obj={
+            mail:form.email.value,
+            pwd:form.pwd.value,
+        }
+
+        det.push(obj);
+        // if(data.email==x && data.pwd==y){
+        //     console.log("login successful");
+        // }
+        
+    })
+    
+
+    function sub(){
+        location.replace("http://127.0.0.1:5500/14:12/index.html")
+    }
+</script>
